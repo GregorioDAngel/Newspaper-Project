@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	const overlay = document.getElementById("paywall-overlay");
 	const subscribeBtn = document.getElementById("paywall-subscribe-btn");
 	const closeBtn = document.getElementById("paywall-close-btn");
+	const xBtn = document.getElementById("paywall-x-btn");
 
 	function lockContent() {
 		if (content) {
@@ -28,6 +29,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
 	// Show paywall after 1 minute on the page (60,000 ms)
 	setTimeout(lockContent, 2000);
+
+	if (xBtn) {
+		xBtn.addEventListener("click", function () {
+			unlockContent();
+		});
+	}
 
 	if (subscribeBtn) {
 		subscribeBtn.addEventListener("click", function () {

@@ -18,7 +18,7 @@
 				</div>
 				<ul class="nav-links">
 					<li>
-						<a href="https://github.com/GregorioDAngel"> Home </a>
+						<a href="tip.html" target="_blank"> Home </a>
 					</li>
 					<li>
 						<a href=""> Politics </a>
@@ -88,11 +88,22 @@
 					</p>
 				</div>
 			</div>
+			<div class="next-article-container next-article-container--right">
+				<button
+					type="button"
+					class="next-article-btn"
+					onclick="window.location.href='article-2.html';"
+				>
+					Read Next Article
+				</button>
+			</div>
+		</div>
 		</div>
 
 		<!-- Paywall overlay -->
 		<div id="paywall-overlay" class="paywall-overlay" style="display: none">
 			<div class="paywall-box">
+				<button id="paywall-x-btn">X</button> <br />
 				<h2>Subscribe to continue reading</h2>
 				<p>Subscribe and get unlimited access to all our articles.</p>
 				<input
@@ -108,7 +119,7 @@
 				<button id="paywall-close-btn">Maybe later</button>
 			</div>
 		</div>
-		<!--<script src="Newspaper.js"></script> -->
+		<script src="Newspaper.js"></script>
 		<script>
 			document.getElementById("today").innerHTML =
 				new Date().toLocaleDateString();
