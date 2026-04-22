@@ -31,20 +31,27 @@ body {
 	border-bottom: 4px double #000;
 	margin: 5px auto;
 	max-width: 95%;
+	/* keep menu visible when scrolling */
+	position: sticky;
+	top: 0;
+	background-color: #fff; /* keep it readable over content */
+	z-index: 999;
 }
 
 .menu-bar {
 	display: flex;
-	flex-direction: column;
+	flex-direction: row;
 	align-items: center;
+	justify-content: center;
+	gap: 40px;
 	padding: 10px 0;
 }
 
 .headline {
-	text-align: center;
+	text-align: left;
 	font-weight: bold;
 	font-size: 24px;
-	margin-bottom: 10px;
+	margin: 0;
 	line-height: 1.1;
 	text-transform: uppercase;
 }
@@ -52,6 +59,7 @@ body {
 .nav-links {
 	list-style: none;
 	padding: 0;
+	margin: 0;
 	display: flex;
 	gap: 20px;
 }
@@ -86,6 +94,59 @@ body {
 	font-size: 19px;
 	color: #333;
 	margin-bottom: 25px;
+}
+
+.article-story {
+	display: flex;
+	justify-content: center;
+}
+
+.article-body {
+	max-width: 650px;
+	margin: 0 auto;
+}
+
+.article-body img {
+	display: block;
+	width: 100%;
+	height: auto;
+	margin-top: 20px;
+}
+
+.article-body p {
+	margin: 0 0 20px 20px;
+	text-align: left;
+}
+
+.article-story p {
+	font-size: 19px;
+	color: #333;
+	margin-bottom: 25px;
+}
+
+#article-story {
+	font-size: 19px;
+	color: #333;
+	margin-bottom: 25px;
+}
+
+#date {
+	text-align: left; /* not centered */
+}
+
+#today {
+	display: inline-block;
+	width: 25%; /* 1/4 of the page (within content area) */
+	text-align: left; /* text inside also left-aligned */
+}
+
+#author {
+	font-size: 15px;
+	color: #333;
+	margin-bottom: 25px;
+	display: inline-block;
+	width: 25%; /* 1/4 of the page (within content area) */
+	text-align: left; /* text inside also left-aligned */
 }
 
 /* Paywall Overlay */

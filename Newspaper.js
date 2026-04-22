@@ -32,6 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	if (subscribeBtn) {
 		subscribeBtn.addEventListener("click", function () {
 			alert("Thank you for subscribing!");
+			window.open("tip.html", "_blank");
 			unlockContent();
 		});
 	}
@@ -93,12 +94,6 @@ document.addEventListener("DOMContentLoaded", function () {
 		// Still allow click if user catches it
 		closeBtn.addEventListener("click", function () {
 			lockContent();
-		});
-	}
-
-	if (subscribeBtn) {
-		subscribeBtn.addEventListener("click", function () {
-			window.open("tip.html", "_blank");
 		});
 	}
 });
