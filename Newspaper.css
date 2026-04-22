@@ -74,5 +74,5 @@
 	position: relative; /* required for left/top moves */
 	transition:
 		left 0.2s ease,
-		/* smooth horizontal motion */ top 0.2s ease; /* smooth vertical motion */
+		top 0.2s ease;
 }
