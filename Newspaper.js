@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	}
 
 	// Show paywall after 1 minute on the page (60,000 ms)
-	setTimeout(lockContent, 30000);
+	setTimeout(lockContent, 2000);
 
 	if (subscribeBtn) {
 		subscribeBtn.addEventListener("click", function () {
@@ -40,13 +40,18 @@ document.addEventListener("DOMContentLoaded", function () {
 		// Make the "Maybe later" button dodge the cursor
 		closeBtn.style.position = "relative";
 
-		const dodgeDistance = 30; // pixels
-		const triggerRadius = 100; // distance from center where it starts to move
+		const dodgeDistance = 30; // pixels per move
+		const triggerRadius = 100; // start dodging when cursor is this close
 
 		closeBtn.addEventListener("mousemove", function (e) {
-			const rect = closeBtn.getBoundingClientRect();
-			const centerX = rect.left + rect.width / 2;
-			const centerY = rect.top + rect.height / 2;
+			const paywallBox = document.querySelector(".paywall-box");
+			if (!paywallBox) return;
+
+			const boxRect = paywallBox.getBoundingClientRect();
+			const btnRect = closeBtn.getBoundingClientRect();
+
+			const centerX = btnRect.left + btnRect.width / 2;
+			const centerY = btnRect.top + btnRect.height / 2;
 
 			const dx = e.clientX - centerX;
 			const dy = e.clientY - centerY;
@@ -58,25 +63,24 @@ document.addEventListener("DOMContentLoaded", function () {
 				const moveX = -Math.cos(angle) * dodgeDistance;
 				const moveY = -Math.sin(angle) * dodgeDistance;
 
-				// current offsets
+				// current offsets (relative positioning)
 				const currentLeft = parseFloat(closeBtn.dataset.left || "0");
 				const currentTop = parseFloat(closeBtn.dataset.top || "0");
 
 				let newLeft = currentLeft + moveX;
 				let newTop = currentTop + moveY;
 
-				// keep roughly within the overlay box
-				const overlayRect = overlay.getBoundingClientRect();
-				const btnWidth = rect.width;
-				const btnHeight = rect.height;
+				// compute max allowed movement so the button never leaves the box
+				const maxRightShift =
+					boxRect.width - (btnRect.left - boxRect.left) - btnRect.width;
+				const maxLeftShift = -(btnRect.left - boxRect.left);
+				const maxDownShift =
+					boxRect.height - (btnRect.top - boxRect.top) - btnRect.height;
+				const maxUpShift = -(btnRect.top - boxRect.top);
 
-				const minX = -overlayRect.width / 2 + btnWidth;
-				const maxX = overlayRect.width / 2 - btnWidth;
-				const minY = -overlayRect.height / 2 + btnHeight;
-				const maxY = overlayRect.height / 2 - btnHeight;
-
-				newLeft = Math.max(minX, Math.min(maxX, newLeft));
-				newTop = Math.max(minY, Math.min(maxY, newTop));
+				// clamp within those true bounds
+				newLeft = Math.max(maxLeftShift, Math.min(maxRightShift, newLeft));
+				newTop = Math.max(maxUpShift, Math.min(maxDownShift, newTop));
 
 				closeBtn.style.left = newLeft + "px";
 				closeBtn.style.top = newTop + "px";
@@ -86,9 +90,15 @@ document.addEventListener("DOMContentLoaded", function () {
 			}
 		});
 
-		// Optional: still allow click if the user somehow catches it
+		// Still allow click if user catches it
 		closeBtn.addEventListener("click", function () {
 			lockContent();
+		});
+	}
+
+	if (subscribeBtn) {
+		subscribeBtn.addEventListener("click", function () {
+			window.open("tip.html", "_blank");
 		});
 	}
 });

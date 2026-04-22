@@ -3,7 +3,7 @@
 	<head>
 		<title>Newspaper</title>
 		<meta charset="utf-8" />
-		<link rel="stylesheet" type="text/css" href="Untitled-1.css" />
+		<link rel="stylesheet" type="text/css" href="NYT.css" />
 	</head>
 	<body>
 		<!-- Header -->
@@ -50,7 +50,16 @@
 		<div id="paywall-overlay" class="paywall-overlay" style="display: none">
 			<div class="paywall-box">
 				<h2>Subscribe to continue reading</h2>
-				<p>Get unlimited access to all our articles.</p>
+				<p>Subscribe and get unlimited access to all our articles.</p>
+				<input
+					type="email"
+					id="email"
+					size="20"
+					maxlength="30"
+					name="email"
+					placeholder="Enter your email"
+					pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+				/><br />
 				<button id="paywall-subscribe-btn">Subscribe</button>
 				<button id="paywall-close-btn">Maybe later</button>
 			</div>
