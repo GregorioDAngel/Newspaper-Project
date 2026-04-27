@@ -1,12 +1,11 @@
 <!doctype html>
 <html>
 	<head>
-		<title>Newspaper</title>
 		<meta charset="utf-8" />
-		<link rel="stylesheet" type="text/css" href="NYT.css" />
+		<title>Home Page</title>
+		<link rel="stylesheet" href="NYT.css" />
 	</head>
 	<body>
-		<!-- Header -->
 		<div class="header" id="header">
 			<h1 id="title" align="center">Newspaper</h1>
 		</div>
@@ -18,7 +17,7 @@
 				</div>
 				<ul class="nav-links">
 					<li>
-						<a href="tip.html" target="_blank"> Home </a>
+						<a href="index.html" target="_blank"> Home </a>
 					</li>
 					<li>
 						<a href=""> Politics </a>
@@ -32,97 +31,31 @@
 				</ul>
 			</nav>
 		</div>
-		<!-- Content -->
-		<div class="content" id="content">
-			<div id="date">
-				Today: <span id="today"></span><br />
-				<p id="author">By: Gregorio Del Angel</p>
-			</div>
-			<div id="article-title">
-				<h1>Civilians Caught in Crossfire as War Reaches Baghdad</h1>
-			</div>
-			<div class="article-story" id="article-story">
-				<div id="article-body">
-					<p>
-						Baghdad, Iraq — Civilians continue to suffer devastating losses as a
-						series of explosions and violent incidents sweep across the city,
-						leaving neighborhoods shattered and families in mourning. What were
-						once ordinary streets filled with vendors, workers, and families
-						have increasingly become sites of destruction, where the line
-						between daily life and disaster has all but disappeared.
-					</p>
-					<img
-						src="IraqWar.jpg"
-						alt="Soldiers going down an empty street manning a tank"
-					/>
-					<p>
-						Witnesses describe scenes of chaos following recent bombings, with
-						cars engulfed in flames, buildings reduced to rubble, and injured
-						civilians crying out for help. Emergency responders arrive quickly,
-						but the scale of destruction often overwhelms available resources.
-						Many victims are ordinary citizens—day laborers, shopkeepers, and
-						passersby—caught in the wrong place at the wrong time. <br /><br />
-						Hospitals across Baghdad are struggling to keep up with the influx
-						of wounded. Medical staff work tirelessly, often with limited
-						supplies, as they treat burns, shrapnel wounds, and other
-						life-threatening injuries. Meanwhile, families search desperately
-						for missing loved ones, sometimes only to find them among the
-						dead.<br /><br />
-						Beyond the physical toll, the psychological impact on civilians is
-						profound. Residents report living in a constant state of fear, where
-						even routine activities such as commuting to work or visiting the
-						market carry life-threatening risks. Over time, many have become
-						desensitized to the violence, viewing each new explosion as part of
-						an unending cycle rather than an isolated tragedy.<br /><br />
-						Officials have pledged to improve security and prevent further
-						attacks, but confidence among the public remains low. Critics argue
-						that efforts have focused more on controlling information than
-						addressing the root causes of the violence. As investigations
-						continue, many questions remain unanswered, leaving civilians to
-						navigate an environment where safety is never guaranteed.
-						<br /><br />
-						For the people of Baghdad, the cost of this violence is deeply
-						personal. Each casualty represents not just a statistic, but a life
-						interrupted—a family altered forever. And as the cycle of violence
-						persists, so too does the uncertainty of what tomorrow may bring.
-					</p>
+		<!-- content -->
+		<div class="home-page">
+			<a href="article-1.html" class="home-article-link">
+				<div class="home-article home-article-left" id="article-1">
+					<div class="home-article-left-text">
+						<div class="home-article-left-title">
+							<h4>Civilians Caught in Crossfire as War Reaches Baghdad</h4>
+						</div>
+						<div class="home-article-left-story">
+							<p>
+								Baghdad, Iraq — Civilians continue to suffer devastating losses
+								as
+								<br />
+								violent explosionssweep across the city.
+							</p>
+						</div>
+					</div>
+					<div class="home-article-left-img">
+						<img src="IraqWar.jpg" alt="" />
+					</div>
 				</div>
-			</div>
-			<div class="next-article-container next-article-container--right">
-				<button
-					type="button"
-					class="next-article-btn"
-					onclick="window.location.href='article-2.html';"
-				>
-					Read Next Article
-				</button>
+			</a>
+			<div class="home-article home-article-right" id="article-2">
+				<p>Hello</p>
 			</div>
 		</div>
-		</div>
-
-		<!-- Paywall overlay -->
-		<div id="paywall-overlay" class="paywall-overlay" style="display: none">
-			<div class="paywall-box">
-				<button id="paywall-x-btn">X</button> <br />
-				<h2>Subscribe to continue reading</h2>
-				<p>Subscribe and get unlimited access to all our articles.</p>
-				<input
-					type="email"
-					id="email"
-					size="20"
-					maxlength="30"
-					name="email"
-					placeholder="Enter your email"
-					pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
-				/><br />
-				<button id="paywall-subscribe-btn">Subscribe</button>
-				<button id="paywall-close-btn">Maybe later</button>
-			</div>
-		</div>
-		<script src="Newspaper.js"></script>
-		<script>
-			document.getElementById("today").innerHTML =
-				new Date().toLocaleDateString();
-		</script>
 	</body>
 </html>

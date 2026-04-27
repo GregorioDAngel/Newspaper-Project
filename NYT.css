@@ -1,3 +1,86 @@
+/* Home page: two-column layout */
+.home-page {
+	display: flex;
+	flex-direction: row;
+	align-items: stretch;
+	gap: 24px;
+	max-width: 1100px;
+	margin: 40px auto;
+	padding: 0; /* remove side padding so left can reach edge */
+	box-sizing: border-box;
+}
+
+/* Make the whole left article card clickable */
+.home-article-link {
+	text-decoration: none;
+	color: inherit;
+	display: block;
+}
+
+/* Left: main feature card */
+.home-article {
+	border-top: 1px solid #ccc; /* lighter border */
+	padding: 16px 0;
+	box-sizing: border-box;
+	transition:
+		background-color 0.2s ease,
+		box-shadow 0.2s ease;
+}
+
+.home-article-link:hover .home-article-left {
+	background-color: #f8f8f8;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+	cursor: pointer;
+}
+
+/* Left column slightly larger than right */
+.home-article-left {
+	flex: 3;
+	display: flex;
+	flex-direction: row; /* text left, image right */
+	gap: 16px;
+	margin-left: 5px; /* small gap from the left edge */
+}
+
+/* keep text from being squashed by a wider image */
+.home-article-left-text {
+	flex: 1;
+	min-width: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+/* Title in left feature */
+.home-article-left-title p {
+	font-weight: bold;
+	font-size: 20px;
+	line-height: 1.2;
+	margin: 0 0 8px 0;
+}
+
+/* Summary in left feature */
+.home-article-left-story p {
+	font-size: 14px;
+	margin: 0;
+	color: #444;
+}
+
+/* Image on the right side of the feature card */
+.home-article-left-img img {
+	display: block;
+	width: 440px; /* bigger image */
+	height: auto;
+	object-fit: cover;
+	border-left: 1px solid #ddd; /* subtle divider to the text */
+	padding-left: 8px;
+}
+
+/* Right column: for now just text, can be filled with more links later */
+.home-article-right {
+	flex: 2;
+}
+
 /* Base Styles */
 body {
 	font-family: "Georgia", "Times New Roman", Times, serif;
