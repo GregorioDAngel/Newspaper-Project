@@ -1,0 +1,111 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Newspaper</title>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" type="text/css" href="NYT.css" />
+	</head>
+	<body>
+		<!-- Header -->
+		<div class="header" id="header">
+			<h1 id="title" align="center">Newspaper</h1>
+		</div>
+		<div class="menu" id="menu">
+			<nav class="menu-bar">
+				<div class="headline">
+					<span>War in the</span><br />
+					<span>Middle East</span>
+				</div>
+				<ul class="nav-links">
+					<li>
+						<a href="index.html" target="_blank"> Home </a>
+					</li>
+					<li>
+						<a href=""> Politics </a>
+					</li>
+					<li>
+						<a href=""> Business </a>
+					</li>
+					<li>
+						<a href=""> Opinion </a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+		<!-- Content -->
+		<div class="content" id="content">
+			<div id="date">
+				Today: <span id="today"></span><br />
+				<p id="author">By: Gregorio Del Angel</p>
+			</div>
+			<div id="article-title">
+				<h1>Young Hotel Guard Dies Preventing Catastrophic Attack</h1>
+			</div>
+			<div class="article-story" id="article-story">
+				<div id="article-body">
+					<p>
+						Baghdad — Twenty-one-year-old hotel guard Hasib Mohamed Jaafar 
+                        is being remembered as a hero after sacrificing his life to stop 
+                        a garbage truck bomb from entering the Sadeer Novotel Hotel in central 
+                        Baghdad. <br /><br />
+					</p>
+					<img
+						src="img/art-3 bus crash.jpg"
+						alt="Soldiers going down an empty street manning a tank"
+					/>
+					<p>
+						According to witnesses, the truck accelerated toward the hotel entrance 
+                        shortly before sunset. Realizing the danger, Hasib reportedly opened fire 
+                        on the driver moments before the explosives detonated. Security officials 
+                        believe his actions forced the bomber to trigger the explosion outside the 
+                        gates rather than inside the crowded building.<br /><br />
+						The blast killed Hasib instantly and sent smoke, glass, and debris flying 
+                        across nearby streets. Several civilians were injured, and surrounding businesses 
+                        sustained major damage. Witnesses described scenes of confusion as survivors 
+                        stumbled through dust-filled streets searching for loved ones.<br /><br />
+						At his family home in Sadr City, mourners gathered to honor the young guard, 
+                        whose remains were barely recoverable after the explosion. Relatives buried 
+                        what little could be found, while his wife and mother openly wept beside the 
+                        coffin.<br /><br />
+						Neighbors described Hasib as quiet, hardworking, and deeply committed to 
+                        supporting his family despite the dangers of working security in Baghdad’s 
+                        unstable environment. <br /><br />
+						The bombing has renewed concerns over growing attacks targeting hotels, 
+                        government sites, and civilian infrastructure throughout the capital. 
+                        Security experts warn that insurgent groups increasingly rely on large 
+                        vehicle bombs capable of causing mass casualties even when attacks fail 
+                        to reach their intended targets. <br /><br />
+                        For many Iraqis, Hasib’s death symbolizes the impossible choices ordinary 
+                        citizens face daily—risking their lives simply by going to work.
+					</p>
+				</div>
+			</div>
+			<div class="next-article-container">
+                <button
+                    type="button"
+                    class="prev-article-btn"
+                    onclick="window.location.href='article-2.html';"
+                     >
+                    ← Previous Article
+                    </button>
+				<button
+					type="button"
+					class="next-article-btn"
+					onclick="window.location.href='article-4.html';"
+				>
+					Read Next Article →
+				</button>
+			</div>
+		</div>
+		</div>
+
+		<!-- No Paywall overlay -->
+		<script>
+			const today = new Date();
+            const tomorrow = new Date(today);
+                tomorrow.setDate(today.getDate() + 7);
+                document.getElementById("today").innerHTML =
+                    tomorrow.toLocaleDateString();
+		</script>
+	</body>
+</html>

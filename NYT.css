@@ -166,6 +166,52 @@ body {
 	padding: 0 20px;
 }
 
+.home-page {
+	max-width: 900px; /* width of each row of articles */
+	margin: 30px auto; /* center on page */
+	display: flex;
+	gap: 20px;
+}
+
+.home-article {
+	flex: 1;
+	display: flex;
+}
+
+.home-article-left {
+	justify-content: space-between;
+	align-items: stretch;
+}
+
+.home-article-left-text {
+	flex: 2;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.home-article-left-img {
+	flex: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.home-article-left-img img {
+	max-width: 100%;
+	height: auto;
+	display: block;
+}
+
+/* Right-hand placeholder/article */
+.home-article-right {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-left: 1px solid #ccc; /* optional divider */
+	padding-left: 10px;
+}
+
 .content img {
 	width: 100%;
 	height: auto;
